@@ -11,5 +11,5 @@ export default class Notfound extends Component {
         <p className="f4-ns tc">Oops. Você parece estar perdido. <a href="/">Clique aqui</a> para retornar a página inical.</p>
       </div>
     );
-  }
-}
+  };
+};

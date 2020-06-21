@@ -14,7 +14,7 @@ export default class Home extends Component<{}, HomeState> {
     super(props);
 
     this.state = {
-      showAlert: false
+      showAlert: true
     };
   };
 

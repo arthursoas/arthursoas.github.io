@@ -1,0 +1,24 @@
+@import 'colors.scss';
+
+.base {
+  height: 100vh;
+
+  .main-nav {
+    background-color: $midnight-blue;
+
+    a {
+      color: $light-gray;
+    }
+
+    a:hover {
+      color: #BFAB93;
+    }
+  }
+
+  .centralized {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

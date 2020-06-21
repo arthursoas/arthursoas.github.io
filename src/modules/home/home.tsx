@@ -32,24 +32,25 @@ export default class Home extends Component<{}, HomeState> {
           <Col lg="2">
             <img src={MeImage} className="h4 br-pill mr3" alt="Arthur's Profile"/>
           </Col>
-          <Col lg className="flex flex-column justify-center">
+          <Col lg className="flex flex-column">
             <h1 className="fw2">Arthur Soares</h1>
             <p className="mb0"><b>Seja bem vindo!</b> Este site é meu projeto pessoal, criado utilizando React!</p>
             <p className="mb2">Aqui você encontrará informações sobre mim e meu trabalho.</p>
-          </Col>
-        </Row>
-        <Row>
-          <Col md={{ span: 2, offset: 2 }} className="flex">
-            <div className="flex mb1 dark-blue">
-              <FontAwesomeIcon icon={faLinkedin} size="lg" className="mr1"/>
-              <a href="https://www.linkedin.com/in/arthursoas/" target="blank">LinkedIn</a>
-            </div>
-          </Col>
-          <Col md="2">
-            <div className="flex">
-              <FontAwesomeIcon icon={faGithubSquare} size="lg" className="mr1"/>
-              <a href="https://github.com/arthursoas" target="blank">GitHub</a>
-            </div>
+
+            <Row>
+              <Col sm="2" className="flex">
+                <div className="flex mb1 dark-blue">
+                  <FontAwesomeIcon icon={faLinkedin} size="lg" className="mr1"/>
+                  <a href="https://www.linkedin.com/in/arthursoas/" target="blank">LinkedIn</a>
+                </div>
+              </Col>
+              <Col sm="2">
+                <div className="flex">
+                  <FontAwesomeIcon icon={faGithubSquare} size="lg" className="mr1"/>
+                  <a href="https://github.com/arthursoas" target="blank">GitHub</a>
+                </div>
+              </Col>
+            </Row>
           </Col>
         </Row>
       </Container>

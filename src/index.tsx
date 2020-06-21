@@ -11,6 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Components
 import NavBar from './components/navbar/navbar';
+import Footer from './components/footer/footer';
 
 // Modules
 import Home from './modules/home/home';
@@ -31,5 +32,6 @@ render((
         </Switch>
       </BrowserRouter>
     </Container>
+    <Footer/>
   </div>
 ), document.getElementById('root'));

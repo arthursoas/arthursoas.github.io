@@ -1,0 +1,12 @@
+@import './colors.scss';
+
+.centralized {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dark-blue {
+  color: $midnight-blue;;
+}

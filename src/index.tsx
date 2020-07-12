@@ -7,6 +7,7 @@ import Container from 'react-bootstrap/Container';
 import './assets/css/main.scss';
 import './assets/css/misc.scss';
 import './assets/css/native.scss';
+import './assets/css/colors.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Components
@@ -20,7 +21,7 @@ import NotFound from './modules/not_found/not_found';
 render((
   <div className="base h-100 flex flex-column">
     <NavBar/>
-    <Container fluid className="h-auto flex-grow-1">
+    <Container fluid className="h-auto flex-grow-1 mt3">
       <BrowserRouter>
         <Switch>
           <Route exact path='/'>

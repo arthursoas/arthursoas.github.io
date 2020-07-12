@@ -6,7 +6,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithubSquare } from "@fortawesome/free-brands-svg-icons";
-import { faGraduationCap, faFileDownload } from "@fortawesome/free-solid-svg-icons";
+import { faGraduationCap, faFilePdf, faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
 
 import MeImage from '../../assets/images/me.png';
 
@@ -22,15 +22,15 @@ export default class Home extends Component<{}, HomeState> {
 
   render() {
     return (
-      <Container className="mt4">
+      <Container>
         { this.state.showAlert &&
-          <Alert variant="dark" dismissible onClose={
+          <Alert variant="danger" dismissible onClose={
             () => this.setState({...this.state, showAlert: false})
           }>
             <b>Atenção: </b>Este projeto está desenvolvimento. Bugs podem ser encontrados.
           </Alert>
         }
-        <Row>
+        <Row className="mb3">
           <Col lg="2">
             <img src={MeImage} className="h4 br-pill mr3" alt="Arthur's Profile"/>
           </Col>
@@ -41,7 +41,7 @@ export default class Home extends Component<{}, HomeState> {
 
             <Row>
               <Col sm="2" className="flex">
-                <div className="flex mb1 dark-blue">
+                <div className="flex mb1 cl-linkedin-blue">
                   <FontAwesomeIcon icon={faLinkedin} size="lg" className="mr1"/>
                   <a href="https://www.linkedin.com/in/arthursoas/" target="blank">LinkedIn</a>
                 </div>
@@ -55,24 +55,23 @@ export default class Home extends Component<{}, HomeState> {
             </Row>
           </Col>
         </Row>
-        <br/>
-        <div className="flex items-center">
+        <div className="flex mb2">
+          <FontAwesomeIcon icon={faQuoteLeft} size="lg" className="mr2 mt2"/>
+          <p className="f3 fw3">
+            Não há tal coisa como a perfeição. Este mundo não é perfeito e, por isso, ele é lindo.
+          </p>
+        </div>
+        <div className="flex items-center mb2">
           <FontAwesomeIcon icon={faGraduationCap} size="lg" className="mr1"/>
           <h3 className="fw2 mb0">Formação</h3>
         </div>
-        <Row className="flex items-center">
-          <Col>
-            <p>Sou formado em Sistemas de Informação pela PUC-Minas desde 2018. Me formei com honras por ser o aluno com a segunda maior média durante todo o curso. Durante minha formação, aprendi a programar utilizando majoritariamente <b>C#</b></p>
-            <p className="mb0">Ainda durante minha formação lidei com Python durante um projeto de iniciação científica, e durante meu TCC.</p>
-          </Col>
-          <Col lg="3">
-            <a href="https://drive.google.com/file/d/1XYPJvf2zEhjeVmGu7F_phCNDXeZWtglD/view?usp=sharing" target="blank">
-              <Button variant="outline-dark" className="left">
-                <FontAwesomeIcon icon={faFileDownload} size="1x" className="mr1"/> Baixar Artigo do TCC
-              </Button>
-            </a>
-          </Col>
-        </Row>
+        <p className="mb0">Sou formado em <b>Sistemas de Informação</b> pela PUC-Minas desde 2018.</p>
+        <p>Durante meu TCC investiguei como as pessoas se engajam com bots no Twitter. Caso se interesse, clique no botão abaixo:</p>
+        <a href="https://drive.google.com/file/d/1XYPJvf2zEhjeVmGu7F_phCNDXeZWtglD/view?usp=sharing" target="blank">
+          <Button variant="outline-dark" className="left">
+            <FontAwesomeIcon icon={faFilePdf} size="1x" className="mr1"/> Visualizar Artigo
+          </Button>
+        </a>
       </Container>
     );
   };

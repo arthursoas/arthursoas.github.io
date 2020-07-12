@@ -1,13 +1,10 @@
 @import '../../assets/css/colors.scss';
 
 .main-nav {
-  background-color: $midnight-blue;
-  -webkit-box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.6);
-  -moz-box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.6);
-  box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.6);
+  background-color: $golden;
 
   a {
-    color: $light-gray;
+    color: $light-golden;
 
     &:hover {
       color: lightgray;

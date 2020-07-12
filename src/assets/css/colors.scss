@@ -1,4 +1,12 @@
-$light-gray: #f5f8f9;
+// Colors
+$light-golden: #F7F7DF;
+$golden: #C5963E;
 
-$night-blue: #2d545e;
-$midnight-blue: #12343b;
+$dark-gray: #333333;
+
+$linkedin-blue: #0E76A8;
+
+// Classes
+.cl-linkedin-blue {
+    color: $linkedin-blue;
+}

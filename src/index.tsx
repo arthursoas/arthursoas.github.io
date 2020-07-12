@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { HashRouter, Route } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 
 // Styles
@@ -23,8 +23,10 @@ render((
       <HashRouter basename="/">
         <NavBar/>
         <Container fluid className="h-auto flex-grow-1 mt3">
+          <Switch>
             <Route exact path='/' component={Home}/>
-            <Route path='/articles' component={NotFound}/>
+            <Route path='*' component={NotFound}/>
+          </Switch>
         </Container>
       </HashRouter>
     <Footer/>

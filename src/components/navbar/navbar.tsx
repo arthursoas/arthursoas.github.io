@@ -10,7 +10,7 @@ export default class NavBar extends Component {
       <Nav className="main-nav">
         <Nav.Item>
           <Nav.Link>
-            <Link to="/">Sobre Mim</Link>
+            <Link to="/">Home</Link>
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
@@ -21,6 +21,11 @@ export default class NavBar extends Component {
         <Nav.Item>
           <Nav.Link>
             <Link to="/articles">Artigos</Link>
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link>
+            <Link to="/about">Sobre</Link>
           </Nav.Link>
         </Nav.Item>
       </Nav>

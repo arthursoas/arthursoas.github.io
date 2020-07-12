@@ -15,6 +15,7 @@ import NavBar from './components/navbar/navbar';
 import Footer from './components/footer/footer';
 
 // Modules
+import About from './modules/about/about';
 import Home from './modules/home/home';
 import NotFound from './modules/not_found/not_found';
 
@@ -25,6 +26,7 @@ render((
         <Container fluid className="h-auto flex-grow-1 mt3">
           <Switch>
             <Route exact path='/' component={Home}/>
+            <Route path='/about' component={About}/>
             <Route path='*' component={NotFound}/>
           </Switch>
         </Container>

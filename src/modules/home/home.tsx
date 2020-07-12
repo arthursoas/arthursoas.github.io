@@ -6,9 +6,10 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithubSquare } from "@fortawesome/free-brands-svg-icons";
-import { faGraduationCap, faFilePdf, faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
+import { faGraduationCap, faFilePdf, faQuoteLeft, faHandsHelping } from "@fortawesome/free-solid-svg-icons";
 
 import MeImage from '../../assets/images/me.png';
+import MSFImage from '../../assets/images/msf-logo.png';
 
 type HomeState = { showAlert: boolean };
 export default class Home extends Component<{}, HomeState> {
@@ -61,17 +62,36 @@ export default class Home extends Component<{}, HomeState> {
             Não há tal coisa como a perfeição. Este mundo não é perfeito e, por isso, ele é lindo.
           </p>
         </div>
-        <div className="flex items-center mb2">
-          <FontAwesomeIcon icon={faGraduationCap} size="lg" className="mr1"/>
-          <h3 className="fw2 mb0">Formação</h3>
+
+        {/* Schooling */}
+        <div className="mb4">
+          <div className="flex items-center mb2">
+            <FontAwesomeIcon icon={faGraduationCap} size="lg" className="mr1"/>
+            <h3 className="fw3 mb0">Formação</h3>
+          </div>
+          <p className="mb0">Sou formado em <b>Sistemas de Informação</b> pela PUC-Minas desde 2018.</p>
+          <p>Durante meu TCC investiguei como as pessoas se engajam com bots no Twitter. Caso se interesse, clique no botão abaixo:</p>
+          <a href="https://drive.google.com/file/d/1XYPJvf2zEhjeVmGu7F_phCNDXeZWtglD/view?usp=sharing" target="blank">
+            <Button variant="outline-dark" className="left">
+              <FontAwesomeIcon icon={faFilePdf} size="1x" className="mr1"/> Visualizar Artigo
+            </Button>
+          </a>
         </div>
-        <p className="mb0">Sou formado em <b>Sistemas de Informação</b> pela PUC-Minas desde 2018.</p>
-        <p>Durante meu TCC investiguei como as pessoas se engajam com bots no Twitter. Caso se interesse, clique no botão abaixo:</p>
-        <a href="https://drive.google.com/file/d/1XYPJvf2zEhjeVmGu7F_phCNDXeZWtglD/view?usp=sharing" target="blank">
-          <Button variant="outline-dark" className="left">
-            <FontAwesomeIcon icon={faFilePdf} size="1x" className="mr1"/> Visualizar Artigo
-          </Button>
-        </a>
+
+        {/* Human Aid */}
+        <div className="flex items-center mb2">
+          <FontAwesomeIcon icon={faHandsHelping} size="lg" className="mr1"/>
+          <h3 className="fw3 mb0">Ajuda Humanitária</h3>
+        </div>
+        <div className="flex mb2">
+          <a href="https://www.msf.org.br/" target="blank">
+            <img src={MSFImage} className="h3" alt="Médicos sem fronteiras"/>
+          </a>
+          <div>
+            <p className="mb0">Seja doador <b>Médicos Sem Fronteiras</b>. Clique no botão ao lado para ajudar.</p>
+            <p className="mb0">São aceitas doações de qualquer valor a partir de R$ 10,00.</p>
+          </div>
+        </div>
       </Container>
     );
   };

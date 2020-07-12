@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Nav from 'react-bootstrap/Nav';
+import { Link } from "react-router-dom";
 
 import './navbar.scss';
 
@@ -8,13 +9,19 @@ export default class NavBar extends Component {
     return (
       <Nav className="main-nav">
         <Nav.Item>
-          <Nav.Link href="/">Sobre Mim</Nav.Link>
+          <Nav.Link>
+            <Link to="/">Sobre Mim</Link>
+          </Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link href="/projects">Projetos</Nav.Link>
+          <Nav.Link>
+            <Link to="/projects">Projetos</Link>
+          </Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link href="/articles">Artigos</Nav.Link>
+          <Nav.Link>
+            <Link to="/articles">Artigos</Link>
+          </Nav.Link>
         </Nav.Item>
       </Nav>
     );

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter, Route } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 
 // Styles
@@ -20,19 +20,13 @@ import NotFound from './modules/not_found/not_found';
 
 render((
   <div className="base h-100 flex flex-column">
-    <NavBar/>
-    <Container fluid className="h-auto flex-grow-1 mt3">
-      <BrowserRouter>
-        <Switch>
-          <Route exact path='/'>
-            <Home/>
-          </Route>
-          <Route path='*'>
-            <NotFound/>
-          </Route>
-        </Switch>
-      </BrowserRouter>
-    </Container>
+      <HashRouter basename="/">
+        <NavBar/>
+        <Container fluid className="h-auto flex-grow-1 mt3">
+            <Route exact path='/' component={Home}/>
+            <Route path='/articles' component={NotFound}/>
+        </Container>
+      </HashRouter>
     <Footer/>
   </div>
 ), document.getElementById('root'));

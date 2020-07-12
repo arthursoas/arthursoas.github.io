@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import NotFoundImage from '../../assets/images/not_found.png';
+import NotFoundImage from '../../assets/images/not-found.png';
 
 export default class Notfound extends Component {
   render() {

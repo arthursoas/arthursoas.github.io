@@ -1,4 +1,5 @@
 export type HomeState = {
   alertCountdown: number,
-  showAlert: boolean
+  showAlert: boolean,
+  pictureClickCounter: number
 };

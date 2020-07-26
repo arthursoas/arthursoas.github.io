@@ -10,6 +10,8 @@ import { faGraduationCap, faFilePdf, faQuoteLeft, faHandsHelping } from "@fortaw
 import { delayAsync } from '../../misc';
 import { HomeState } from './HomeState';
 
+import './home.scss';
+
 import MeImage from '../../assets/images/me.jpg';
 import MSFLogoImage from '../../assets/images/msf-logo.png';
 
@@ -21,7 +23,8 @@ export default class Home extends Component<{}, HomeState> {
 
     this.state = {
       alertCountdown: this.alertContdown,
-      showAlert: true
+      showAlert: true,
+      pictureClickCounter: 0
     };
   };
 
@@ -41,6 +44,12 @@ export default class Home extends Component<{}, HomeState> {
     }
   }
 
+  incrementPictureClickCouter(event: any): void {
+    this.setState(
+      {...this.state, pictureClickCounter: this.state.pictureClickCounter + 1}
+    );
+  }
+
   render(): ReactNode {
     return (
       <Container>
@@ -51,12 +60,16 @@ export default class Home extends Component<{}, HomeState> {
             <b>({this.state.alertCountdown}) Atenção: </b>Este projeto está desenvolvimento. Bugs podem ser encontrados.
           </Alert>
         }
+
+        {/* Resume */}
         <Row className="mb3">
           <Col lg="2" className="flex justify-center justify-start-ns">
-            <img src={MeImage} className="h4 br-pill mr3 ba bw1 items-start-ns items-center" alt="Arthur's Profile"/>
+            <img src={MeImage} className="h4 br-pill mr3 ba bw1 items-start-ns items-center" alt="Arthur's Profile"
+              onClick={(event: any) => {this.incrementPictureClickCouter(event)}} title="Don't touch me"
+            />
           </Col>
           <Col lg className="flex flex-column">
-            <h1 className="fw2 tc tl-ns">Arthur Soares</h1>
+            <h1 className="fw3 tc tl-ns">Arthur Soares</h1>
             <p className="mb0"><b>Seja bem vindo!</b> Este site é meu projeto pessoal, criado utilizando React!</p>
             <p className="mb2">Aqui você encontrará informações sobre mim e meu trabalho.</p>
 
@@ -76,7 +89,9 @@ export default class Home extends Component<{}, HomeState> {
             </Row>
           </Col>
         </Row>
-        <div className="flex mb2">
+
+        {/* Quote */}
+        <div className="flex mb3">
           <FontAwesomeIcon icon={faQuoteLeft} size="lg" className="mr2 mt2"/>
           <p className="f3 fw3">
             Não há tal coisa como a perfeição. Este mundo não é perfeito e, por isso, ele é lindo.
@@ -90,10 +105,10 @@ export default class Home extends Component<{}, HomeState> {
             <h3 className="fw3 mb0">Formação</h3>
           </div>
           <p className="mb0">Sou formado em <b>Sistemas de Informação</b> pela PUC-Minas desde 2018.</p>
-          <p>Durante meu TCC investiguei como as pessoas se engajam com bots no Twitter. Caso se interesse, clique no botão abaixo:</p>
+          <p className="mb2">Durante meu TCC investiguei como as pessoas se engajam com bots no Twitter. Caso se interesse, clique no botão abaixo:</p>
           <a href="https://drive.google.com/file/d/1XYPJvf2zEhjeVmGu7F_phCNDXeZWtglD/view?usp=sharing" target="blank">
             <Button variant="outline-dark" className="left">
-              <FontAwesomeIcon icon={faFilePdf} size="1x" className="mr1"/> Visualizar Artigo
+              <FontAwesomeIcon icon={faFilePdf} size="1x" className="mr1"/> Visualizar TCC
             </Button>
           </a>
         </div>
@@ -114,6 +129,18 @@ export default class Home extends Component<{}, HomeState> {
             <a href="https://www.msf.org.br/" target="blank">Clique aqui para doar!</a>
           </Col>
         </Row>
+
+        {/* Easter Egg */}
+        { this.state.pictureClickCounter >= 10 &&
+          <div className="fixed top-0 left-0 vh-100 w-100 death-blue">
+            <p>A problem has been detected and my site has been shut down to prevent damage to my picture.</p>
+            <p>If this is the first time you'he seen this stop error screen, refresh your browser. If this screen appears again, follow these steps:</p>
+            <p className="mb0">Stop clicking my picture, I don't like that!</p>
+            <p>In particular, try even don't look to it too much, I'm really scared with your pretensions.</p>
+            <p>Technical information:</p>
+            <p>*** STOP: 0x0000002E (0x0000000000000002, 0x0000000030040002, 0x0000000015200032, 0x0024040000000001)</p>
+          </div>
+        }
       </Container>
     );
   };

@@ -23,7 +23,7 @@ export default class About extends Component {
           </Col>
           <Col xs className="flex flex-column">
             <h4 className="fw3 mb1">Bootstrap</h4>
-            <p className="mb0">Utilizado como toolkit frontend deste site. Consulte a biblioteca react-bootstrap.</p>
+            <p className="mb0">Utilizado como toolkit frontend deste projeto.</p>
             <p>Conheça o <a href="https://getbootstrap.com/" target="blank">Bootstrap</a> e o <a href="https://react-bootstrap.github.io/" target="blank">React Bootstrap</a>.</p>
           </Col>
         </Row>
@@ -34,7 +34,7 @@ export default class About extends Component {
           </Col>
           <Col xs className="flex flex-column">
             <h4 className="fw3 mb1">Font Awesome</h4>
-            <p className="mb0">Utilizado para os ícones deste site.</p>
+            <p className="mb0">Utilizado para os ícones deste projeto.</p>
             <p>Conheça o <a href="https://fontawesome.com/" target="blank">Font Awesome</a> e o <a href="https://github.com/FortAwesome/react-fontawesome" target="blank">React Font Awesome</a>.</p>
           </Col>
         </Row>
@@ -45,7 +45,7 @@ export default class About extends Component {
           </Col>
           <Col xs className="flex flex-column">
             <h4 className="fw3 mb1">React</h4>
-            <p className="mb0">A base deste projeto. Todo este site foi criado utilizando React, do zero, sem templates prontos.</p>
+            <p className="mb0">A base de tudo. Todo este projeto foi criado utilizando React, do zero, sem templates prontos.</p>
             <p>Conheça o <a href="https://reactjs.org/" target="blank">React</a>.</p>
           </Col>
         </Row>
@@ -56,7 +56,7 @@ export default class About extends Component {
           </Col>
           <Col xs className="flex flex-column">
             <h4 className="fw3 mb1">React Router</h4>
-            <p className="mb0">Utilizado para roteamento das páginas deste site.</p>
+            <p className="mb0">Utilizado para roteamento das páginas deste projeto.</p>
             <p>Conheça o <a href="https://reactrouter.com/" target="blank">React Router</a>.</p>
           </Col>
         </Row>
@@ -66,7 +66,7 @@ export default class About extends Component {
           </Col>
           <Col xs className="flex flex-column">
             <h4 className="fw3 mb1">Tachyons</h4>
-            <p className="mb0">Toolkit CSS que diminui a quantidade de CSS necessário neste site.</p>
+            <p className="mb0">Toolkit CSS que diminui a quantidade de CSS necessário neste projeto.</p>
             <p>Conheça o <a href="https://tachyons.io/" target="blank">Tachyons</a>.</p>
           </Col>
         </Row>

@@ -20,7 +20,7 @@ import Home from './modules/home/home';
 import NotFound from './modules/not_found/not_found';
 
 render((
-  <div className="base h-100 flex flex-column">
+  <div className="min-vh-100 flex flex-column">
       <HashRouter basename="/">
         <NavBar/>
         <Container fluid className="h-auto flex-grow-1 mt3">

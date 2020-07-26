@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, ReactNode } from 'react';
 import Alert from 'react-bootstrap/Alert';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
@@ -7,36 +7,56 @@ import Row from 'react-bootstrap/Row';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithubSquare } from "@fortawesome/free-brands-svg-icons";
 import { faGraduationCap, faFilePdf, faQuoteLeft, faHandsHelping } from "@fortawesome/free-solid-svg-icons";
+import { delayAsync } from '../../misc';
+import { HomeState } from './HomeState';
 
-import MeImage from '../../assets/images/me.png';
-import MSFImage from '../../assets/images/msf-logo.png';
+import MeImage from '../../assets/images/me.jpg';
+import MSFLogoImage from '../../assets/images/msf-logo.png';
 
-type HomeState = { showAlert: boolean };
 export default class Home extends Component<{}, HomeState> {
+  alertContdown: number = 10;
+
   constructor(props: any) {
     super(props);
 
     this.state = {
+      alertCountdown: this.alertContdown,
       showAlert: true
     };
   };
 
-  render() {
+  async componentDidMount() {
+    this.startAlertCountdownAsync();
+  }
+
+  async startAlertCountdownAsync(): Promise<void> {
+    for (let index: number = this.alertContdown; index > 0; index --) {
+      await delayAsync(1000);
+      this.setState(
+        {...this.state, alertCountdown: this.state.alertCountdown - 1}
+      );
+      if (this.state.alertCountdown === 0) {
+        this.setState({...this.state, showAlert: false});
+      }
+    }
+  }
+
+  render(): ReactNode {
     return (
       <Container>
         { this.state.showAlert &&
           <Alert variant="danger" dismissible onClose={
             () => this.setState({...this.state, showAlert: false})
           }>
-            <b>Atenção: </b>Este projeto está desenvolvimento. Bugs podem ser encontrados.
+            <b>({this.state.alertCountdown}) Atenção: </b>Este projeto está desenvolvimento. Bugs podem ser encontrados.
           </Alert>
         }
         <Row className="mb3">
-          <Col lg="2">
-            <img src={MeImage} className="h4 br-pill mr3" alt="Arthur's Profile"/>
+          <Col lg="2" className="flex justify-center justify-start-ns">
+            <img src={MeImage} className="h4 br-pill mr3 ba bw1 items-start-ns items-center" alt="Arthur's Profile"/>
           </Col>
           <Col lg className="flex flex-column">
-            <h1 className="fw2">Arthur Soares</h1>
+            <h1 className="fw2 tc tl-ns">Arthur Soares</h1>
             <p className="mb0"><b>Seja bem vindo!</b> Este site é meu projeto pessoal, criado utilizando React!</p>
             <p className="mb2">Aqui você encontrará informações sobre mim e meu trabalho.</p>
 
@@ -83,15 +103,17 @@ export default class Home extends Component<{}, HomeState> {
           <FontAwesomeIcon icon={faHandsHelping} size="lg" className="mr1"/>
           <h3 className="fw3 mb0">Ajuda Humanitária</h3>
         </div>
-        <div className="flex mb2">
-          <a href="https://www.msf.org.br/" target="blank">
-            <img src={MSFImage} className="h3" alt="Médicos sem fronteiras"/>
-          </a>
-          <div>
-            <p className="mb0">Seja doador <b>Médicos Sem Fronteiras</b>. Clique no botão ao lado para ajudar.</p>
-            <p className="mb0">São aceitas doações de qualquer valor a partir de R$ 10,00.</p>
-          </div>
-        </div>
+        <Row className="mb3 flex items-center">
+          <Col sm="1" className="dn di-ns">
+            <a href="https://www.msf.org.br/" target="blank">
+              <img src={MSFLogoImage} className="mr3 w-80" alt="Médicos sem fronteiras logo"/>
+            </a>
+          </Col>
+          <Col sm className="flex flex-column">
+            <p className="mb0">Seja doador <b>Médicos Sem Fronteiras</b>. São aceitas doações de qualquer valor a partir de R$ 10,00.</p>
+            <a href="https://www.msf.org.br/" target="blank">Clique aqui para doar!</a>
+          </Col>
+        </Row>
       </Container>
     );
   };
